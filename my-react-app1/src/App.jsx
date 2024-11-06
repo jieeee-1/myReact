@@ -1,22 +1,54 @@
-// 建立新的元件
-function MyComponent(){
-  // return <h1>React</h1> 也可以這樣寫
-  return (  //可以不寫小括號，但空標籤要寫在return後（同行）
-    // 空標籤：Fragment（因為他不存在，所以f12檢查看不到）
-    <>
-  <h1>React</h1>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto voluptatum illo asperiores vel eveniet, illum culpa cupiditate! Nam, quas. Praesentium eum ducimus illo autem iure dolorem dolore odio error maxime.</p>
-  </>
-)
+
+function Component() {
+  return <h1>React</h1>
 }
 
 function App() {
-// 如果把所有東西都放在App裡面的話，React效能會變低 => 元件建在function App外或另一個Component的file
+
+  // 建立陣列元件(可以是任何形式資料=>元件)
+  // 同一個陣列中，key屬性的值不可以重複
+  const listItem = [
+    <Component key="0" />,
+    <Component key="1" />,
+    <Component key="2" />,
+  ]
+
+  const listBooks = [
+    { bookName: 'HTML', id: 'book1' },
+    { bookName: 'CSS', id: 'book2' },
+    { bookName: 'JavaScript', id: 'book3' },
+  ]
+
+  // 過濾出陣列中，除了CSS的書本
+  const filterBooks = listBooks.filter((book) => {
+    // if (book.bookName !== 'CSS') {
+    //   return true
+    // }
+
+    // 三元運算子的判斷式（只能用在單層判斷）
+    // 判斷式？條件成立：條件不成立
+    return book.bookName !== 'CSS' ? true : false
+
+  })
 
   return (
-    <div>
-      <MyComponent />
-    </div>
+    <>
+      {/* 使用陣列方法1 */}
+      {listItem}
+      <hr />
+      {/* 使用陣列方法2 => map() => 此方法可以把一個陣列轉換成另外一個陣列 */}
+      {
+        listBooks.map((book) => {
+          return <div key={book.id}>{book.bookName}</div>
+        })
+      }
+      <hr />
+      {/* 顯示fliter()過濾陣列資料 */}
+      {
+        filterBooks.map((book) => {
+          return <div key={book.id}>{book.bookName}</div>
+        })}
+    </>
   )
 }
 
