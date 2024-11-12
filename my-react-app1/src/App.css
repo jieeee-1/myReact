@@ -1,7 +1,122 @@
+/*
 h1 {
-    font-size: 50px;
+    font-size: 28px;
 }
 
 .unLineColor {
     border-bottom: 3px double blue;
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header img {
+    width: 100%;
+}
+
+
+/* 特色 */
+.content {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.content .box {
+    width: 300px;
+    text-align: center;
+}
+
+.content .box h2 {
+    color: crimson;
+}
+
+.content .box p {
+    color: gray;
+    line-height: 1.5;
+    /* line-height後面可以用行高也可以打單位 */
+}
+
+/* 主標 */
+.title h2 {
+    color: white;
+    background-color: crimson;
+    width: 100%;
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    line-height: 50px;
+}
+
+/* 推薦課程 */
+.content2 h1 {
+    color: green;
+    text-align: center;
+    line-height: 100px;
+}
+
+.content2 .contentClass {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.content2 .contentClass .box2 {
+    width: 300px;
+    /* 陰影：水平 垂直 擴展度 色彩 */
+    box-shadow: 0 0 10px #ccc;
+    padding: 10px; /* 上下左右給留白 */
+    border-radius: 10px;
+}
+
+.content2 .contentClass .box2 img {
+    width: 100%;
+    /* 依據上面的300px填滿百分之百 */
+}
+
+.content2 .contentClass .box2 .p-blue {
+    line-height: 1.2;
+    color: cornflowerblue;
+}
+
+.content2 .contentClass .box2 p {
+    color: gray;
+}
+
+.content2 .contentClass .box2 .span1 {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.content2 .contentClass .box2 .span2 {
+    color: red;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.content2 .contentClass .box2 button {
+    background-color: crimson;
+    color: white;
+    border: none;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 5px; /* 圓角 */
+    margin-top: 20px;
+}
+
+/* 頁尾 */
+footer {
+    background-color: gray;
+    line-height: 50px;
+    /* padding: 10px; */
+    color: white;
+    text-align: center;
+    width: 100%;
 }

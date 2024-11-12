@@ -1,55 +1,97 @@
-
-function Component() {
-  return <h1>React</h1>
-}
+// import banner from '../public/images/banner.jpg'
+// images沒有在public可以這樣寫
+// 載入app.css
+import './App.css'
 
 function App() {
-
-  // 建立陣列元件(可以是任何形式資料=>元件)
-  // 同一個陣列中，key屬性的值不可以重複
-  const listItem = [
-    <Component key="0" />,
-    <Component key="1" />,
-    <Component key="2" />,
-  ]
-
-  const listBooks = [
-    { bookName: 'HTML', id: 'book1' },
-    { bookName: 'CSS', id: 'book2' },
-    { bookName: 'JavaScript', id: 'book3' },
-  ]
-
-  // 過濾出陣列中，除了CSS的書本
-  const filterBooks = listBooks.filter((book) => {
-    // if (book.bookName !== 'CSS') {
-    //   return true
-    // }
-
-    // 三元運算子的判斷式（只能用在單層判斷）
-    // 判斷式？條件成立：條件不成立
-    return book.bookName !== 'CSS' ? true : false
-
-  })
-
   return (
     <>
-      {/* 使用陣列方法1 */}
-      {listItem}
-      <hr />
-      {/* 使用陣列方法2 => map() => 此方法可以把一個陣列轉換成另外一個陣列 */}
-      {
-        listBooks.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })
-      }
-      <hr />
-      {/* 顯示fliter()過濾陣列資料 */}
-      {
-        filterBooks.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })}
+      <div className="wrap">
+        {/* 頁首廣告區 */}
+        <header>
+          {/* 導入圖片後使用 */}
+          <div>
+            <img src="images/banner.jpg"></img>
+          </div>
+        </header>
+
+        {/* 特色區 */}
+        <div className="content">
+          <div className='box'>
+            <h2><strong>教學影音</strong></h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ea</p>
+          </div>
+          <div className='box'>
+            <h2><strong>良性互動</strong></h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ea</p>
+          </div>
+          <div className='box'>
+            <h2><strong>趨勢分享</strong></h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ea</p>
+          </div>
+        </div>
+        {/* 主標 */}
+        <section className="title">
+          <h2>讓學習成為一種習慣</h2>
+        </section>
+
+        {/* 推薦課程 */}
+        <div className="content2">
+          <h1>推薦課程</h1>
+          <div className='contentClass'>
+            {/* 課程1 */}
+            <div className="box2">
+              <p><img src='images/unity.jpg'></img></p>
+              <h3>Unity 5</h3>
+              <p className='p-blue'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ea</p>
+              <p>講師：某某某</p>
+              <p>影音課程時數：1hr</p>
+              <p>
+                <span className='span1'>原價1600</span>
+                <span className='span2'>1200</span>
+              </p>
+              <p><button>付款上課去</button></p>
+            </div>
+
+            {/* 課程2 */}
+            <div className="box2">
+              <p><img src='images/gamesalad.jpg'></img></p>
+              <h3>Gamesalad Game 遊戲製作</h3>
+              <p className='p-blue'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ea</p>
+              <p>講師：某某某</p>
+              <p>影音課程時數：1hr</p>
+              <p>
+                <span className='span1'>原價1600</span>
+                <span className='span2'>1200</span>
+              </p>
+              <p><button>付款上課去</button></p>
+            </div>
+
+            {/* 課程3 */}
+            <div className="box2">
+              <p><img src='images/gwd.jpg'></img></p>
+              <h3>Google web design</h3>
+              <p className='p-blue'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ea</p>
+              <p>講師：某某某</p>
+              <p>影音課程時數：1hr</p>
+              <p>
+                <span className='span1'>原價3600</span>
+                <span className='span2'>2200</span>
+              </p>
+              <p><button>付款上課去</button></p>
+            </div>
+          </div>
+        </div>
+
+        {/* 頁尾區 */}
+        <footer>
+          <p>&copy; 2024.11.12 楊詠捷 </p>
+        </footer>
+      </div >
     </>
   )
 }
+
+
 
 export default App
