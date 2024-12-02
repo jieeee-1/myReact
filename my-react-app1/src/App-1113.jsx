@@ -1,7 +1,7 @@
 // import banner from '../public/images/banner.jpg'
 // images沒有在public可以這樣寫
 // 載入app.css
-import './App.css'
+import './App-1113.css'
 import ShowContent from './ShowContent.jsx'
 import ShowContentClass from './ShowContentClass.jsx'
 
