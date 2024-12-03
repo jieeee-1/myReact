@@ -3,16 +3,25 @@ import axios from 'axios';
 
 import './App.css'
 
-import { FaUmbrella } from "react-icons/fa";
+// import { FaUmbrella } from "react-icons/fa";
 
 function App() {
-  // useEffect(() => {
-  //   (async () => {
-  //     const data = await axios.get('./F-C0032-001.json');
-  //     const { location } = data.data.cwaopendata.dataset;
-  //     console.log(location);
-  //   })
-  // }, [])
+  useEffect(() => {
+    (async () => {
+      // 本地端要在web-server伺服器下才可以執行
+      // const data = await axios.get('./F-C0032-001.json');
+
+      // json的連結必須是公開網址下的來源
+      const data = await axios.get('https://jieeee-1.github.io/myReact/json/F-C0032-001.json');
+      // console.log(data);
+      const { location } = data.data.cwaopendata.dataset;
+      console.log(location);
+
+      // locationName => 縣市名
+      // elementName => Wx => 天氣概況
+      // elementName => PoP => 降雨機率
+    })
+  }, [])
 
   return (
     <>
@@ -20,32 +29,37 @@ function App() {
         <h2>36小時天氣預報</h2>
         {/* 一欄兩列 */}
         <div className="row">
-          <div className="col1">
-            {/* 卡片樣式 */}
-            <div className="card">
-              {/* 標題 */}
-              <div className="card-title">台北市</div>
-              {/* 內容 */}
-              <div className="card-body">
-                {/* 1列三欄 */}
-                <div className="row2">
-                  <div className="col1">
-                    <p>2日</p>
-                    <p>
-                      上午6:00<br />
-                      ～<br />
-                      下午6:00
-                    </p>
-                    <p>
-                      <img src="./public/weatherIcon/晴時多雲.svg" alt="" />
-                    </p>
-                    <p>晴時多雲</p>
-                    <p><FaUmbrella />10%</p>
+          {
+            location.map((city) => {
+              <div className="col1">
+                {/* 卡片樣式 */}
+                <div className="card">
+                  {/* 標題 */}
+                  <div className="card-title">台北市</div>
+                  {/* 內容 */}
+                  <div className="card-body">
+                    {/* 1列三欄 */}
+                    <div className="row2">
+                      <div className="col1">
+                        <p>2日</p>
+                        <p>
+                          上午6:00<br />
+                          ～<br />
+                          下午6:00
+                        </p>
+                        <p>
+                          <img src="./public/weatherIcon/晴時多雲.svg" alt="" />
+                        </p>
+                        <p>晴時多雲</p>
+                        <p><FaUmbrella />10%</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            })
+          }
+
         </div>
 
       </div>
