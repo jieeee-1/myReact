@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonary 瀑布流效果</title>
+    <style>
+        #container {
+            margin: auto;
+        }
+        .box {
+            width: 300px;
+            text-align: center;
+            /* border: 1px solid #ccc; */
+            margin: 2px;
+            background-color: cornflowerblue;
+        }
+
+        .box img {
+            width: 100%;
+            vertical-align: top;  /* 拿掉圖片留白 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">
+            <img src="./jQuery/images/image-1.jpg" alt="">
+            <p>photo1</p>
+        </div>
+        <div class="box">
+            <img src="./jQuery/images/image-2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="./jQuery/images/image-3.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="./jQuery/images/image-4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="./jQuery/images/image-5.jpg" alt="">
+        </div>
+    </div>
+
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+    <script src="./jQuery/js/imagesloaded.pkgd.min.js"></script>
+    <script src="./jQuery/js/masonry.pkgd.min.js"></script>
+    <script>
+        $(function(){
+            $('#container').imagesLoaded(function(){
+                $('#container').masonry({
+                    // 左右留白，頁面置中
+                    // 搭配最外層的container
+                    // margin: auto
+                    isFitWidth: true
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

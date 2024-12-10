@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel 換圖輪播</title>
+    <style>
+        #carousel {
+            /* background-color: brown; */  /* 查看圖片後面留白 */
+        }
+
+        #carousel img {
+            width: 150px;
+            height: 100px;
+            margin-right: 10px;
+            vertical-align: top;  /* 垂直排列可以取消圖片下方預設的留白區 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel">
+        <ul>
+            <li><img src="./jQuery/images/01.jpg"></li>
+            <li><img src="./jQuery/images/03.jpg"></li>
+            <li><img src="./jQuery/images/05.jpg"></li>
+            <li><img src="./jQuery/images/07.jpg"></li>
+            <li><img src="./jQuery/images/09.jpg"></li>
+        </ul>
+    </div>
+
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+    <script src="./jQuery/js/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(function () {
+            $('#carousel').jCarouselLite({
+                auto: 800,    // 多久時間動一下
+                speed: 1000,  // 輪播的速度
+                scroll: 1,    // 一次輪播的張數（不寫的話，預設為一張）
+                visible: 3,   // 看見的張數
+            });
+        });
+    </script>
+</body>
+
+</html>
